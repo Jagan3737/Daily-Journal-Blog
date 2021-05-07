@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+
+<div class="row">
+  <div class="col-lg-6">
+    <br>
+    <p class="homeContent"><%= homeStartingContent %></p>
+    <form action="/compose" method="post">
+      <button type="submit" class="btn btn-primary ">Compose</button>
+    </form>
+    <br>
+  </div>
+</div>
+
+
+<% posts.forEach(function(element){ %>
+<h3><%=element.title%></h3>
+<p><%=element.post.substring(0,100)%> ... <a href="/posts/<%=element.title%>">Read More</a></p>
+<br>
+<% }) %>
+
+<%- include("partials/footer"); -%>
