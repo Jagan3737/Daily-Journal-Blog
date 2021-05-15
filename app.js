@@ -61,8 +61,10 @@ app.get("/posts/:topic", function(req, res) {
 });
 
 app.post("/", function(req, res) {
+  var title = req.body.title;
+  title = title.trim();
   const postInput = new Blog({
-    title: req.body.title,
+    title: title,
     post: req.body.post
   });
   postInput.save();
